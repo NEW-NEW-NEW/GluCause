@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "glucause-analysis"
+version = "0.1.0"
+description = "Data preprocessing and analysis for the GluCause study"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license-files = ["LICENSE"]
+dependencies = [
+  "numpy>=1.26,<2",
+  "pandas>=2.2,<3",
+  "scipy>=1.13,<2",
+  "scikit-learn>=1.5,<2",
+  "matplotlib>=3.9,<4",
+  "pyarrow>=16,<20",
+  "openpyxl>=3.1,<4",
+]
+
+[project.scripts]
+glucause-analysis = "glucause_analysis.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
